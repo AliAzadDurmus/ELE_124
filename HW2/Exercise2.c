@@ -13,15 +13,19 @@ int main(void)
 	
 	for( int i=0; i<50; i++ )
 	{ 
-		itemPrice = rand()%1999 + 1;
+		itemPrice = rand()%2001;
 		itemPrice = itemPrice / 100;
-		printf("Item is %.2f\n", itemPrice);
+		printf("%2d)Item is %8.2f$\n", i+1, itemPrice);
+		printf("   Donation is %3.2f$\n", itemPrice - floor(itemPrice));
+		printf("   Profit is %6.2f$\n\n", floor(itemPrice));
+		
 		Hunerler(itemPrice, &donationTotal, &profitTotal);
+
 	}
 	
-	printf("Donation is %.2f\n", donationTotal);
-	printf("Profit is %.2f\n", profitTotal);
-	
+	printf(" --------------------\n   Donation is %.2f$\n", donationTotal);
+	printf("   Profit is %8.2f$\n --------------------\n", profitTotal);
+
 	return 0;
 }	
 
